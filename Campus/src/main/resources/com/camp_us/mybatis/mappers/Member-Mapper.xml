@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Member-Mapper">
+
+<sql id="search">
+<if test="searchType == 'i'.toString()">
+where id like '%'||#{keyword}||'%'
+</if>
+<if test="searchType == 'n'.toString()">
+where name like '%'||#{keyword}||'%'
+</if>
+<if test="searchType == 'e'.toString()">
+where email like '%'||#{keyword}||'%'
+</if>
+<if test="searchType == 'p'.toString()">
+where phone like '%'||#{keyword}||'%'
+</if>
+</sql>
+
+<select id="selectMemberList" resultType="account">
+select *
+from account
+order by mem_lastlogin_date desc
+</select>
+
+<select id="selectMemberByID" parameterType="str" resultType="account">
+select *
+from account
+where mem_id=#{mem_id}
+</select>
+
+<insert id="insertMember" parameterType="account">
+insert into
+account(mem_id, mem_pass, mem_email, mem_phone, mem_name, mem_add)
+values(#{mem_id}, #{mem_pass}, #{mem_email},#{mem_phone},#{mem_name},#{mem_add})
+</insert>
+
+<update id="updateMember" parameterType="account">
+update account 
+set mem_pass=#{mem_pass},mem_email=#{mem_email},mem_phone=#{mem_phone},mem_name=#{mem_name}
+where mem_id=#{mem_id}
+</update>
+
+<delete id="deleteMember" parameterType="str">
+delete
+from account
+where mem_id=#{mem_id}
+</delete>
+
+<insert id="insertAuthorities" >
+insert into auth_detail(mem_id,role_id)
+values (#{mem_id},#{role_id})
+</insert>
+
+<delete id="deleteAllAuthorityById" >
+delete
+from auth_detail
+where mem_id = #{mem_id} and role_id!='student'
+</delete>
+
+<select id="selectAuthoritiesById" resultType="str">
+select role
+from auth_detail
+where role_id=#{role_id}
+</select>
+</mapper>
