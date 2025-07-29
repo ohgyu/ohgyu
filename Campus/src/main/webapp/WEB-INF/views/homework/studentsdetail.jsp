@@ -278,209 +278,120 @@
 	<!-- Main content -->
 	<section class="content">
 		<div class="container-fluid">
+			<tbody>
+				<tr>
+					<td style="color: #444; background-color: #f8f9fa;">
+						<h1>7주차 과제입니다.</h1> <br>
+						<h2>기한 : 2025-07-25 16:00 ~ 2025-07-31 23:59</h2> <br> 이번 과제는
+						강의 내용을 바탕으로 실제 예제를 작성하는 것이 핵심입니다.<br> <br>
+						<ul>
+							<li>제출 마감일을 꼭 지켜주세요.</li>
+							<li>파일명은 학번_이름_과제명 형식으로 저장해주세요.</li>
+							<li>내용을 간단히 요약해서 제출란에 기입 바랍니다.</li>
+							<br>
+						</ul>
+					</td>
+				</tr>
+				<td>
+					<form method="post" action="/campus/homework/submit"
+						enctype="multipart/form-data"
+						onsubmit="return confirm('과제를 제출하시겠습니까?');">
 
-			<!-- 검색창 -->
-			<div class="d-flex justify-content-end mb-3">
-				<form method="get" class="form-inline">
-					<input type="text" name="keyword" class="form-control mr-2"
-						placeholder="제목을 입력해주세요" value="${pageMaker.keyword}">
-					<button type="submit" class="btn btn-primary">
-						<i class="fas fa-search"></i>
-					</button>
-				</form>
-			</div>
+						<div class="text-right">
+							<button type="submit" class="btn btn-info"
+								style="margin-right: 10px;">제출</button>
+							<a href="/campus/homeworklist" class="btn btn-secondary">목록</a>
+						</div>
+						<br>
+						<input type="hidden" name="hwNo" value="${homework.hwNo}" />
 
-			<!-- 과제 목록 테이블 -->
-			<div class="card">
-				<div class="card-body table-responsive p-0">
-					<table class="table table-hover text-center">
-						<thead class="thead-light">
-							<tr>
-								<th>주차</th>
-								<th>제목</th>
-								<th>기간</th>
-								<th>제출여부</th>
-								<th>진행</th>
-								<th>평가</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>7</td>
-								<td><a href="http://localhost/campus/homeworklist/detail">7주차 과제입니다.</a></td>
-								<td>2025-07-25 16:00 ~ 2025-07-31 23:59</td>
-								<td><span class="badge badge-danger">미제출</span></td>
-								<td><span class="badge badge-primary">진행중</span></td>
-								<td>미평가</td>
-							</tr>
-							<tr>
-								<td>6</td>
-								<td><a href="homework/detail.do?hwNo=6">6주차 과제입니다.</a></td>
-								<td>2025-07-17 16:00 ~ 2025-07-24 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>5-1</td>
-								<td>5주차 과제입니다.</td>
-								<td>2025-07-10 16:00 ~ 2025-07-16 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>5</td>
-								<td>5주차 과제입니다.</td>
-								<td>2025-07-10 16:00 ~ 2025-07-16 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td>4주차 과제입니다.</td>
-								<td>2025-07-06 16:00 ~ 2025-07-12 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>3-1</td>
-								<td>3주차 과제입니다.</td>
-								<td>2025-07-03 16:00 ~ 2025-07-09 23:59</td>
-								<td><span class="badge badge-danger">미제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>미평가</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>3주차 과제입니다.</td>
-								<td>2025-07-03 16:00 ~ 2025-07-09 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>2주차 과제입니다.</td>
-								<td>2025-07-02 16:00 ~ 2025-07-08 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>1-1</td>
-								<td>1주차 과제입니다.</td>
-								<td>2025-07-01 16:00 ~ 2025-07-07 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>1주차 과제입니다.</td>
-								<td>2025-07-01 16:00 ~ 2025-07-07 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
+						<textarea name="hsDetail" class="form-control mb-2" rows="6"
+							placeholder="내용을 입력하세요">${submitDetail}</textarea>
 
-			<!-- 페이징 -->
-			<nav aria-label="Page navigation example">
-				<ul class="pagination justify-content-center mt-4">
-					<c:if test="${pageMaker.prev}">
-						<li class="page-item"><a class="page-link"
-							href="?page=${pageMaker.startPage - 1}&keyword=${pageMaker.keyword}"
-							aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-						</a></li>
-					</c:if>
+						<div class="mb-2">
+							<label class="btn btn-outline-secondary"> 파일선택 <input
+								type="file" name="uploadFile" id="uploadFile" hidden>
+							</label> <span id="file-name">선택된 파일이 없습니다.</span>
+						</div>
 
-					<c:forEach var="i" begin="${pageMaker.startPage}"
-						end="${pageMaker.endPage}">
-						<li class="page-item ${i == pageMaker.page ? 'active' : ''}">
-							<a class="page-link"
-							href="?page=${i}&keyword=${pageMaker.keyword}">${i}</a>
-						</li>
-					</c:forEach>
 
-					<c:if test="${pageMaker.next}">
-						<li class="page-item"><a class="page-link"
-							href="?page=${pageMaker.endPage + 1}&keyword=${pageMaker.keyword}"
-							aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-						</a></li>
-					</c:if>
-				</ul>
-			</nav>
+					</form>
+				</td>
+				</tr>
+			</tbody>
 
+
+
+			<!-- Control Sidebar -->
+			<aside class="control-sidebar control-sidebar-dark">
+				<!-- Control sidebar content goes here -->
+			</aside>
+			<!-- /.control-sidebar -->
 		</div>
-		<!-- /.container-fluid -->
-	</section>
-	<!-- /.content -->
+		<!-- ./wrapper -->
+		<%@ include file="/WEB-INF/views/module/footer.jsp"%>
 
 
-
-	<!-- Control Sidebar -->
-	<aside class="control-sidebar control-sidebar-dark">
-		<!-- Control sidebar content goes here -->
-	</aside>
-	<!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
-<%@ include file="/WEB-INF/views/module/footer.jsp"%>
-<!-- jQuery -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-	$.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery-knob/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/moment/moment.min.js"></script>
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard.js"></script>
-</body>
-</html>
+		<!-- jQuery -->
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
+		<!-- jQuery UI 1.11.4 -->
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery-ui/jquery-ui.min.js"></script>
+		<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+		<script>
+			$.widget.bridge('uibutton', $.ui.button)
+		</script>
+		<!-- Bootstrap 4 -->
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- ChartJS -->
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/chart.js/Chart.min.js"></script>
+		<!-- Sparkline -->
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/sparklines/sparkline.js"></script>
+		<!-- JQVMap -->
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jqvmap/jquery.vmap.min.js"></script>
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+		<!-- jQuery Knob Chart -->
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery-knob/jquery.knob.min.js"></script>
+		<!-- daterangepicker -->
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/moment/moment.min.js"></script>
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/daterangepicker/daterangepicker.js"></script>
+		<!-- Tempusdominus Bootstrap 4 -->
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+		<!-- Summernote -->
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/summernote/summernote-bs4.min.js"></script>
+		<!-- overlayScrollbars -->
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+		<!-- AdminLTE App -->
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/adminlte.js"></script>
+		<!-- AdminLTE for demo purposes -->
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/demo.js"></script>
+		<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+		<script
+			src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard.js"></script>
+		<script>
+			document
+					.getElementById('uploadFile')
+					.addEventListener(
+							'change',
+							function() {
+								const fileName = this.files.length > 0 ? this.files[0].name
+										: '선택된 파일이 없습니다.';
+								document.getElementById('file-name').textContent = fileName;
+							});
+		</script>
+		</body>
+		</html>

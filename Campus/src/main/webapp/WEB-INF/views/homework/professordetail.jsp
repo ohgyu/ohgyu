@@ -252,183 +252,120 @@
 <!-- /.sidebar -->
 </aside>
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-	<!-- Content Header (Page header) -->
-	<div class="content-header">
-		<div class="container-fluid">
-			<div class="row mb-2">
-				<div class="col-sm-6">
-					<h1 class="m-0">과제제출</h1>
-				</div>
-				<!-- /.col -->
-				<div class="col-sm-6">
-					<ol class="breadcrumb float-sm-right">
-						<li class="breadcrumb-item"><a href="#">Home</a></li>
-						<li class="breadcrumb-item active">과제제출</li>
-					</ol>
-				</div>
-				<!-- /.col -->
-			</div>
-			<!-- /.row -->
-		</div>
-		<!-- /.container-fluid -->
-	</div>
-	<!-- /.content-header -->
-	<!-- Main content -->
-	<section class="content">
-		<div class="container-fluid">
+	<div class="content-wrapper">
+  <section class="content-header">
+    <div class="container-fluid">
+      <h1>과제 제출</h1>
+    </div>
+  </section>
 
-			<!-- 검색창 -->
-			<div class="d-flex justify-content-end mb-3">
-				<form method="get" class="form-inline">
-					<input type="text" name="keyword" class="form-control mr-2"
-						placeholder="제목을 입력해주세요" value="${pageMaker.keyword}">
-					<button type="submit" class="btn btn-primary">
-						<i class="fas fa-search"></i>
-					</button>
-				</form>
-			</div>
+  <section class="content">
+    <div class="container-fluid">
 
-			<!-- 과제 목록 테이블 -->
-			<div class="card">
-				<div class="card-body table-responsive p-0">
-					<table class="table table-hover text-center">
-						<thead class="thead-light">
-							<tr>
-								<th>주차</th>
-								<th>제목</th>
-								<th>기간</th>
-								<th>제출여부</th>
-								<th>진행</th>
-								<th>평가</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>7</td>
-								<td><a href="http://localhost/campus/homeworklist/detail">7주차 과제입니다.</a></td>
-								<td>2025-07-25 16:00 ~ 2025-07-31 23:59</td>
-								<td><span class="badge badge-danger">미제출</span></td>
-								<td><span class="badge badge-primary">진행중</span></td>
-								<td>미평가</td>
-							</tr>
-							<tr>
-								<td>6</td>
-								<td><a href="homework/detail.do?hwNo=6">6주차 과제입니다.</a></td>
-								<td>2025-07-17 16:00 ~ 2025-07-24 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>5-1</td>
-								<td>5주차 과제입니다.</td>
-								<td>2025-07-10 16:00 ~ 2025-07-16 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>5</td>
-								<td>5주차 과제입니다.</td>
-								<td>2025-07-10 16:00 ~ 2025-07-16 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td>4주차 과제입니다.</td>
-								<td>2025-07-06 16:00 ~ 2025-07-12 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>3-1</td>
-								<td>3주차 과제입니다.</td>
-								<td>2025-07-03 16:00 ~ 2025-07-09 23:59</td>
-								<td><span class="badge badge-danger">미제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>미평가</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>3주차 과제입니다.</td>
-								<td>2025-07-03 16:00 ~ 2025-07-09 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>2주차 과제입니다.</td>
-								<td>2025-07-02 16:00 ~ 2025-07-08 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>1-1</td>
-								<td>1주차 과제입니다.</td>
-								<td>2025-07-01 16:00 ~ 2025-07-07 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>1주차 과제입니다.</td>
-								<td>2025-07-01 16:00 ~ 2025-07-07 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
+      <!-- 과제 정보 -->
+      <div class="card">
+        <div class="card-body">
+          <h4>[7주차] 7주차 과제입니다.</h4>
+          <p><strong>기간:</strong> 2025-07-25 16:00 ~ 2025-07-31 23:59</p>
+          <p>각 조는 택 1 주제를 선택하여 찬성/반대 중 하나의 입장을 정하고, 논리적 근거를 바탕으로 토론 준비<br>
+            팀원 간 역할 분담 (서론/논점 정리, 주장, 반론 대응 등) 필수<br>
+            토론 직후 개인별로 간단한 자기평가서(자유양식, A4 1장 내외) 제출
+          </p>
+        </div>
+      </div>
 
-			<!-- 페이징 -->
-			<nav aria-label="Page navigation example">
-				<ul class="pagination justify-content-center mt-4">
-					<c:if test="${pageMaker.prev}">
-						<li class="page-item"><a class="page-link"
-							href="?page=${pageMaker.startPage - 1}&keyword=${pageMaker.keyword}"
-							aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-						</a></li>
-					</c:if>
+      <!-- 제출 목록 -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">제출 목록</h3>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered text-center">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>제목</th>
+                <th>제출자</th>
+                <th>제출일자</th>
+                <th>첨부파일</th>
+                <th>제출여부</th>
+                <th>평가여부</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><a href="#" onclick="openDetailPopup('1')">7주차 과제입니다.</a></td>
+                <td>김민주</td>
+                <td>2025-07-30 23:00</td>
+                <td><i class="fas fa-paperclip"></i></td>
+                <td><span class="badge bg-success">제출</span></td>
+                <td><span class="badge bg-success">완료</span></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><a href="#" onclick="openDetailPopup('2')">과제 제출 합니다.</a></td>
+                <td>윤용선</td>
+                <td>2025-07-30 23:50</td>
+                <td><i class="fas fa-paperclip"></i></td>
+                <td><span class="badge bg-success">제출</span></td>
+                <td><span class="badge bg-success">완료</span></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><a href="#" onclick="openDetailPopup('3')">20191396 김원희 과제 제출합니다.</a></td>
+                <td>김원희</td>
+                <td>2025-07-31 02:30</td>
+                <td><i class="fas fa-paperclip"></i></td>
+                <td><span class="badge bg-success">제출</span></td>
+                <td><span class="badge bg-success">완료</span></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><a href="#" onclick="openDetailPopup('4')">과제 제출</a></td>
+                <td>김선범</td>
+                <td>2025-07-31 03:50</td>
+                <td><i class="fas fa-paperclip"></i></td>
+                <td><span class="badge bg-success">제출</span></td>
+                <td><span class="badge bg-success">완료</span></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><a href="#" onclick="openDetailPopup('5')">과제 제출 합니다.</a></td>
+                <td>권오규</td>
+                <td>2025-08-01 00:03</td>
+                <td><i class="fas fa-paperclip"></i></td>
+                <td><span class="badge bg-secondary">미제출</span></td>
+                <td><span class="badge bg-warning">미등록</span></td>
+              </tr>
+            </tbody>
+          </table>
 
-					<c:forEach var="i" begin="${pageMaker.startPage}"
-						end="${pageMaker.endPage}">
-						<li class="page-item ${i == pageMaker.page ? 'active' : ''}">
-							<a class="page-link"
-							href="?page=${i}&keyword=${pageMaker.keyword}">${i}</a>
-						</li>
-					</c:forEach>
+          <!-- 목록 버튼 -->
+          <div class="text-right mt-3">
+            <a href="<%=request.getContextPath()%>/prohomeworklist" class="btn btn-success">목록</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
-					<c:if test="${pageMaker.next}">
-						<li class="page-item"><a class="page-link"
-							href="?page=${pageMaker.endPage + 1}&keyword=${pageMaker.keyword}"
-							aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-						</a></li>
-					</c:if>
-				</ul>
-			</nav>
+<script>
+  function openDetailPopup(id) {
+    window.open(
+      "<%=request.getContextPath()%>/homework/detail?no=" + id,
+      "제출 상세보기",
+      "width=800,height=600,scrollbars=yes,resizable=no"
+    );
+  }
+</script>
 
-		</div>
-		<!-- /.container-fluid -->
-	</section>
-	<!-- /.content -->
-
-
-
-	<!-- Control Sidebar -->
-	<aside class="control-sidebar control-sidebar-dark">
-		<!-- Control sidebar content goes here -->
-	</aside>
-	<!-- /.control-sidebar -->
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+	<!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 <%@ include file="/WEB-INF/views/module/footer.jsp"%>

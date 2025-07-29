@@ -279,156 +279,147 @@
 	<section class="content">
 		<div class="container-fluid">
 
-			<!-- 검색창 -->
-			<div class="d-flex justify-content-end mb-3">
-				<form method="get" class="form-inline">
-					<input type="text" name="keyword" class="form-control mr-2"
-						placeholder="제목을 입력해주세요" value="${pageMaker.keyword}">
-					<button type="submit" class="btn btn-primary">
-						<i class="fas fa-search"></i>
-					</button>
-				</form>
-			</div>
+			<!-- Main content -->
+			<section class="content">
+				<div class="container-fluid">
 
-			<!-- 과제 목록 테이블 -->
-			<div class="card">
-				<div class="card-body table-responsive p-0">
-					<table class="table table-hover text-center">
-						<thead class="thead-light">
-							<tr>
-								<th>주차</th>
-								<th>제목</th>
-								<th>기간</th>
-								<th>제출여부</th>
-								<th>진행</th>
-								<th>평가</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>7</td>
-								<td><a href="http://localhost/campus/homeworklist/detail">7주차 과제입니다.</a></td>
-								<td>2025-07-25 16:00 ~ 2025-07-31 23:59</td>
-								<td><span class="badge badge-danger">미제출</span></td>
-								<td><span class="badge badge-primary">진행중</span></td>
-								<td>미평가</td>
-							</tr>
-							<tr>
-								<td>6</td>
-								<td><a href="homework/detail.do?hwNo=6">6주차 과제입니다.</a></td>
-								<td>2025-07-17 16:00 ~ 2025-07-24 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>5-1</td>
-								<td>5주차 과제입니다.</td>
-								<td>2025-07-10 16:00 ~ 2025-07-16 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>5</td>
-								<td>5주차 과제입니다.</td>
-								<td>2025-07-10 16:00 ~ 2025-07-16 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td>4주차 과제입니다.</td>
-								<td>2025-07-06 16:00 ~ 2025-07-12 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>3-1</td>
-								<td>3주차 과제입니다.</td>
-								<td>2025-07-03 16:00 ~ 2025-07-09 23:59</td>
-								<td><span class="badge badge-danger">미제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>미평가</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>3주차 과제입니다.</td>
-								<td>2025-07-03 16:00 ~ 2025-07-09 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>2주차 과제입니다.</td>
-								<td>2025-07-02 16:00 ~ 2025-07-08 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>1-1</td>
-								<td>1주차 과제입니다.</td>
-								<td>2025-07-01 16:00 ~ 2025-07-07 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>1주차 과제입니다.</td>
-								<td>2025-07-01 16:00 ~ 2025-07-07 23:59</td>
-								<td><span class="badge badge-success">제출</span></td>
-								<td><span class="badge badge-secondary">종료</span></td>
-								<td>평가완료</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
+					<!-- 검색창 -->
+					<div class="d-flex justify-content-end mb-3">
+						<form method="get" class="form-inline">
+							<input type="text" name="keyword" class="form-control mr-2"
+								placeholder="제목을 입력해주세요" value="${keyword}">
+							<button type="submit" class="btn btn-primary">
+								<i class="fas fa-search"></i>
+							</button>
+						</form>
+					</div>
 
-			<!-- 페이징 -->
-			<nav aria-label="Page navigation example">
-				<ul class="pagination justify-content-center mt-4">
-					<c:if test="${pageMaker.prev}">
-						<li class="page-item"><a class="page-link"
-							href="?page=${pageMaker.startPage - 1}&keyword=${pageMaker.keyword}"
-							aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-						</a></li>
-					</c:if>
+					<!-- 과제 목록 테이블 -->
+					<div class="card">
+						<div class="card-body table-responsive p-0">
+							<table class="table table-hover text-center">
+								<thead class="thead-light">
+									<tr>
+										<th>주차</th>
+										<th>제목</th>
+										<th>기간</th>
+										<th>진행</th>
+									</tr>
+								</thead>
+								<tbody>
+								<tbody>
+									<tr>
+										<td>7</td>
+										<td><a href="<%=request.getContextPath()%>/homework/detail?no=1">7주차 과제입니다.</a></td>
+										<td>2025-07-25 16:00 ~ 2025-07-31 23:59</td>
+										<td><span class="badge badge-primary">진행중</span></td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td><a href="#">6주차 과제입니다.</a></td>
+										<td>2025-07-17 16:00 ~ 2025-07-24 23:59</td>
+										<td><span class="badge badge-secondary">종료</span></td>
+									</tr>
+									<tr>
+										<td>5-1</td>
+										<td><a href="#">5주차 과제입니다.</a></td>
+										<td>2025-07-10 16:00 ~ 2025-07-16 23:59</td>
+										<td><span class="badge badge-secondary">종료</span></td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td><a href="#">5주차 과제입니다.</a></td>
+										<td>2025-07-10 16:00 ~ 2025-07-16 23:59</td>
+										<td><span class="badge badge-secondary">종료</span></td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td><a href="#">4주차 과제입니다.</a></td>
+										<td>2025-07-06 16:00 ~ 2025-07-12 23:59</td>
+										<td><span class="badge badge-secondary">종료</span></td>
+									</tr>
+									<tr>
+										<td>3-1</td>
+										<td><a href="#">3주차 과제입니다.</a></td>
+										<td>2025-07-03 16:00 ~ 2025-07-09 23:59</td>
+										<td><span class="badge badge-secondary">종료</span></td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td><a href="#">3주차 과제입니다.</a></td>
+										<td>2025-07-03 16:00 ~ 2025-07-09 23:59</td>
+										<td><span class="badge badge-secondary">종료</span></td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td><a href="#">2주차 과제입니다.</a></td>
+										<td>2025-07-02 16:00 ~ 2025-07-08 23:59</td>
+										<td><span class="badge badge-secondary">종료</span></td>
+									</tr>
+									<tr>
+										<td>1-1</td>
+										<td><a href="#">1주차 과제입니다.</a></td>
+										<td>2025-07-01 16:00 ~ 2025-07-07 23:59</td>
+										<td><span class="badge badge-secondary">종료</span></td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td><a href="#">1주차 과제입니다.</a></td>
+										<td>2025-07-01 16:00 ~ 2025-07-07 23:59</td>
+										<td><span class="badge badge-secondary">종료</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- 등록 버튼 -->
+						<div class="d-flex justify-content-end mb-3">
+							<button type="button" class="btn btn-success"
+								onclick="window.open('<%=request.getContextPath()%>/prohomeworklist/register','과제등록','width=900,height=700,scrollbars=yes,resizable=no')">등록</button>
+						</div>
 
-					<c:forEach var="i" begin="${pageMaker.startPage}"
-						end="${pageMaker.endPage}">
-						<li class="page-item ${i == pageMaker.page ? 'active' : ''}">
-							<a class="page-link"
-							href="?page=${i}&keyword=${pageMaker.keyword}">${i}</a>
-						</li>
-					</c:forEach>
+						<!-- 페이징 -->
+						<nav aria-label="Page navigation example">
+							<ul class="pagination justify-content-center mt-4">
+								<c:if test="${pageMaker.prev}">
+									<li class="page-item"><a class="page-link"
+										href="?page=${pageMaker.startPage - 1}&keyword=${pageMaker.keyword}">&laquo;</a>
+									</li>
+								</c:if>
+								<c:forEach var="i" begin="${pageMaker.startPage}"
+									end="${pageMaker.endPage}">
+									<li class="page-item ${i == pageMaker.page ? 'active' : ''}">
+										<a class="page-link"
+										href="?page=${i}&keyword=${pageMaker.keyword}">${i}</a>
+									</li>
+								</c:forEach>
+								<c:if test="${pageMaker.next}">
+									<li class="page-item"><a class="page-link"
+										href="?page=${pageMaker.endPage + 1}&keyword=${pageMaker.keyword}">&raquo;</a>
+									</li>
+								</c:if>
+							</ul>
+						</nav>
 
-					<c:if test="${pageMaker.next}">
-						<li class="page-item"><a class="page-link"
-							href="?page=${pageMaker.endPage + 1}&keyword=${pageMaker.keyword}"
-							aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-						</a></li>
-					</c:if>
-				</ul>
-			</nav>
 
+					</div>
+			</section>
 		</div>
-		<!-- /.container-fluid -->
-	</section>
-	<!-- /.content -->
+</div>
 
+<script>
+	function openRegisterPopup() {
+		window.open(
+			'<%=request.getContextPath()%>
+	/homework/register', // 등록 폼 URL
+		'과제등록', 'width=800,height=600,scrollbars=yes,resizable=no');
+	}
+</script>
 
-
-	<!-- Control Sidebar -->
-	<aside class="control-sidebar control-sidebar-dark">
-		<!-- Control sidebar content goes here -->
-	</aside>
-	<!-- /.control-sidebar -->
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+	<!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 <%@ include file="/WEB-INF/views/module/footer.jsp"%>

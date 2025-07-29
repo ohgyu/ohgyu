@@ -13,4 +13,8 @@ public class HomeworkController {
 		return "homework/studentslist";
 	}
 	
+	@GetMapping("/homeworklist/detail")
+	public String studentsdetail() {
+		return "homework/studentsdetail";
+	}
 }
