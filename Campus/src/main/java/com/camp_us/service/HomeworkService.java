@@ -12,7 +12,7 @@ public interface HomeworkService {
     List<HomeworkVO> getHomeworkList(PageMaker pageMaker) throws SQLException;
 
     // 과제 상세 조회
-    HomeworkVO getHomeworkByNo(String hwNo);
+    HomeworkVO getHomeworkByNo(String hwNo)throws SQLException;
 
     // 과제 등록
     void insertHomework(HomeworkVO homework);

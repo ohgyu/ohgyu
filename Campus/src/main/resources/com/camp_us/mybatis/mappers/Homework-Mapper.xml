@@ -23,12 +23,12 @@
 	<select id="getHomeworkByNo" parameterType="String"
 		resultType="com.camp_us.dto.HomeworkVO">
 		SELECT
-		HW_NO,
-		HW_NAME,
-		HW_STARTDATE,
-		HW_ENDDATE,
-		HW_DESC,
-		LECS_ID
+		HW_NO as hwNo,
+		HW_NAME as hwName,
+		HW_STARTDATE as hwStartDate,
+		HW_ENDDATE as hwEndDate,
+		HW_DESC as hwDesc,
+		LECS_ID as lecsId
 		FROM HOMEWORK
 		WHERE HW_NO = #{hwNo}
 	</select>

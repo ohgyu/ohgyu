@@ -29,9 +29,8 @@ public class HomeworkServiceImpl implements HomeworkService {
 	
 	
 	@Override
-	public HomeworkVO getHomeworkByNo(String hwNo) {
-		// TODO Auto-generated method stub
-		return null;
+	public HomeworkVO getHomeworkByNo(String hwNo) throws SQLException {
+	    return homeworkDAO.getHomeworkByNo(hwNo);
 	}
 
 	@Override

@@ -33,8 +33,7 @@ private SqlSession session;
 
 	@Override
 	public HomeworkVO getHomeworkByNo(String hwNo) {
-		// TODO Auto-generated method stub
-		return null;
+	    return session.selectOne("Homework-Mapper.getHomeworkByNo", hwNo);
 	}
 
 	@Override

@@ -54,7 +54,7 @@
 						<c:forEach var="homework" items="${homeworklist}">
 							<tr>
 								<td>${homework.hwNo}</td>
-								<td><a href="homework/detail.do?hwNo=${homework.hwNo}">
+								<td><a href="homeworklist/detail.do?hwNo=${homework.hwNo}">
 										${homework.hwName} </a></td>
 								<td><fmt:formatDate value="${homework.hwStartDate}"
 										pattern="yyyy-MM-dd HH:mm" /> ~ <fmt:formatDate
