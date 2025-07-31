@@ -9,6 +9,9 @@
 		<typeAlias type="java.lang.Integer" alias="int"/>
 		
 		<typeAlias type="com.camp_us.dto.MemberVO" alias="account"/>
+		<typeAlias type="com.camp_us.dto.HomeworkVO" alias="homework"/>
+		
+		<typeAlias type="com.camp_us.command.PageMaker" alias="pageMaker"/>
 	</typeAliases>
 </configuration>
 

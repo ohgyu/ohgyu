@@ -3,14 +3,44 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	<bean id="memberDAO"
-	      class="com.camp_us.dao.MemberDAOImpl"
-	      c:session-ref="sqlSession"
+
+	<!-- member.picture -->
+	<bean id="picturePath" 
+		  class="java.lang.String"
+		  c:value="${savePath.member.picture}" 		
+	/>		
+	<!-- summernote.image -->
+	<bean id="summernotePath"
+	      class="java.lang.String"
+	      c:value="${savePath.summernote.image}"
 	      />
+	<!-- pds files -->
+	<bean id="pdsSavedFilePath"
+	      class="java.lang.String"
+	      c:value="${savePath.pds.files}"
+	      />			
+	      
+	<!-- log saved path -->
+	<bean id="logSavedPath"
+	      class="java.lang.String"
+	      c:value="${savePath.log.files}"
+	      />     
+	      
+	<bean id="memberDAO" class="com.camp_us.dao.MemberDAOImpl"
+		c:session-ref="sqlSession" />
 	<bean id="memberService"
-	      class="com.camp_us.service.MemberServiceImpl"
-	      c:memberDAO-ref="memberDAO"
-	      />
+		class="com.camp_us.service.MemberServiceImpl"
+		c:memberDAO-ref="memberDAO" />
+		
+	<bean id="homeworkDAO" 
+		class="com.camp_us.dao.HomeworkDAOImpl"
+		c:session-ref="sqlSession" />
+
+	<bean id="homeworkService"
+		class="com.camp_us.service.HomeworkServiceImpl"
+		c:homeworkDAO-ref="homeworkDAO"
+		c:summernotePath-ref="summernotePath"
+		 />
+		
+
 </beans>
-
-

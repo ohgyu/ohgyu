@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Homework-Mapper">
+
+	<!-- 과제 목록 전체 조회 -->
+	<select id="getHomeworkList"
+		resultType="com.camp_us.dto.HomeworkVO">
+		SELECT
+		HW_NO as hwNo,
+		HW_NAME as hwName,
+		HW_STARTDATE as hwStartDate,
+		HW_ENDDATE as hwEndDate,
+		HW_DESC as hwDesc,
+		LECS_ID as lecsId
+		FROM HOMEWORK
+		ORDER BY HW_STARTDATE DESC
+	</select>
+
+	<!-- 과제 상세 조회 -->
+	<select id="getHomeworkByNo" parameterType="String"
+		resultType="com.camp_us.dto.HomeworkVO">
+		SELECT
+		HW_NO,
+		HW_NAME,
+		HW_STARTDATE,
+		HW_ENDDATE,
+		HW_DESC,
+		LECS_ID
+		FROM HOMEWORK
+		WHERE HW_NO = #{hwNo}
+	</select>
+
+	<!-- 과제 등록 -->
+	<insert id="insertHomework"
+		parameterType="com.camp_us.dto.HomeworkVO">
+		INSERT INTO HOMEWORK (
+		HW_NO,
+		HW_NAME,
+		HW_STARTDATE,
+		HW_ENDDATE,
+		HW_DESC,
+		LECS_ID
+		) VALUES (
+		#{hwNo},
+		#{hwName},
+		#{hwStartDate},
+		#{hwEndDate},
+		#{hwDesc},
+		#{lecsId}
+		)
+	</insert>
+
+	<!-- 과제 수정 -->
+	<update id="updateHomework"
+		parameterType="com.camp_us.dto.HomeworkVO">
+		UPDATE HOMEWORK
+		SET
+		HW_NAME = #{hwName},
+		HW_STARTDATE =
+		#{hwStartDate},
+		HW_ENDDATE = #{hwEndDate},
+		HW_DESC = #{hwDesc},
+		LECS_ID =
+		#{lecsId}
+		WHERE HW_NO = #{hwNo}
+	</update>
+
+	<!-- 과제 삭제 -->
+	<delete id="deleteHomework" parameterType="String">
+		DELETE FROM HOMEWORK
+		WHERE HW_NO = #{hwNo}
+	</delete>
+
+	<!-- (학생 전용) 수강 중인 강의실의 과제 목록 -->
+	<select id="getStudentHomeworkList" parameterType="String"
+		resultType="com.camp_us.dto.HomeworkVO">
+		SELECT
+		HW_NO,
+		HW_NAME,
+		HW_STARTDATE,
+		HW_ENDDATE,
+		HW_DESC,
+		LECS_ID
+		FROM HOMEWORK
+		WHERE LECS_ID IN (
+		SELECT LECS_ID
+		FROM LECTURE_LIST
+		WHERE STU_ID = #{studentId}
+		)
+		ORDER BY HW_STARTDATE DESC
+	</select>
+
+</mapper>

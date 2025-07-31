@@ -4,65 +4,78 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Member-Mapper">
 
-<sql id="search">
-<if test="searchType == 'i'.toString()">
-where id like '%'||#{keyword}||'%'
-</if>
-<if test="searchType == 'n'.toString()">
-where name like '%'||#{keyword}||'%'
-</if>
-<if test="searchType == 'e'.toString()">
-where email like '%'||#{keyword}||'%'
-</if>
-<if test="searchType == 'p'.toString()">
-where phone like '%'||#{keyword}||'%'
-</if>
-</sql>
+  <sql id="search">
+    <if test="searchType == 'i'.toString()">
+      WHERE id LIKE '%' || #{keyword} || '%'
+    </if>
+    <if test="searchType == 'n'.toString()">
+      WHERE name LIKE '%' || #{keyword} || '%'
+    </if>
+    <if test="searchType == 'e'.toString()">
+      WHERE email LIKE '%' || #{keyword} || '%'
+    </if>
+    <if test="searchType == 'p'.toString()">
+      WHERE phone LIKE '%' || #{keyword} || '%'
+    </if>
+  </sql>
 
-<select id="selectMemberList" resultType="account">
-select *
-from account
-order by mem_lastlogin_date desc
-</select>
+  <!-- 전체 회원 목록 조회 -->
+  <select id="selectMemberList" resultType="com.camp_us.dto.MemberVO">
+    SELECT *
+    FROM account
+    ORDER BY mem_lastlogin_date DESC
+  </select>
 
-<select id="selectMemberByID" parameterType="str" resultType="account">
-select *
-from account
-where mem_id=#{mem_id}
-</select>
+  <!-- ID로 회원 조회 -->
+  <select id="selectMemberByID" parameterType="java.lang.String" resultType="com.camp_us.dto.MemberVO">
+    SELECT *
+    FROM account
+    WHERE mem_id = #{mem_id}
+  </select>
 
-<insert id="insertMember" parameterType="account">
-insert into
-account(mem_id, mem_pass, mem_email, mem_phone, mem_name, mem_add)
-values(#{mem_id}, #{mem_pass}, #{mem_email},#{mem_phone},#{mem_name},#{mem_add})
-</insert>
+  <!-- 회원 등록 -->
+  <insert id="insertMember" parameterType="com.camp_us.dto.MemberVO">
+    INSERT INTO account (
+      mem_id, mem_pass, mem_email, mem_phone, mem_name, mem_add
+    ) VALUES (
+      #{mem_id}, #{mem_pass}, #{mem_email}, #{mem_phone}, #{mem_name}, #{mem_add}
+    )
+  </insert>
 
-<update id="updateMember" parameterType="account">
-update account 
-set mem_pass=#{mem_pass},mem_email=#{mem_email},mem_phone=#{mem_phone},mem_name=#{mem_name}
-where mem_id=#{mem_id}
-</update>
+  <!-- 회원 수정 -->
+  <update id="updateMember" parameterType="com.camp_us.dto.MemberVO">
+    UPDATE account
+    SET mem_pass = #{mem_pass},
+        mem_email = #{mem_email},
+        mem_phone = #{mem_phone},
+        mem_name = #{mem_name}
+    WHERE mem_id = #{mem_id}
+  </update>
 
-<delete id="deleteMember" parameterType="str">
-delete
-from account
-where mem_id=#{mem_id}
-</delete>
+  <!-- 회원 삭제 -->
+  <delete id="deleteMember" parameterType="java.lang.String">
+    DELETE FROM account
+    WHERE mem_id = #{mem_id}
+  </delete>
 
-<insert id="insertAuthorities" >
-insert into auth_detail(mem_id,role_id)
-values (#{mem_id},#{role_id})
-</insert>
+  <!-- 권한 추가 -->
+  <insert id="insertAuthorities">
+    INSERT INTO auth_detail (mem_id, role_id)
+    VALUES (#{mem_id}, #{role_id})
+  </insert>
 
-<delete id="deleteAllAuthorityById" >
-delete
-from auth_detail
-where mem_id = #{mem_id} and role_id!='student'
-</delete>
+  <!-- 권한 삭제 -->
+  <delete id="deleteAllAuthorityById">
+    DELETE FROM auth_detail
+    WHERE mem_id = #{mem_id}
+      AND role_id != 'student'
+  </delete>
 
-<select id="selectAuthoritiesById" resultType="str">
-select role
-from auth_detail
-where role_id=#{role_id}
-</select>
+  <!-- 권한 조회 -->
+  <select id="selectAuthoritiesById" resultType="java.lang.String">
+    SELECT role
+    FROM auth_detail
+    WHERE role_id = #{role_id}
+  </select>
+
 </mapper>
